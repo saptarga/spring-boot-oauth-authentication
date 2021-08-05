@@ -1,0 +1,23 @@
+# Generate Password With Grant Type: password
+# @name generateToken
+POST /oauth/token?username=user001&password=teststaff&grant_type=password HTTP/1.1
+Host: localhost:8080
+Authorization: Basic bW9iaWxlYXBwOmFiY2Q=
+
+###
+
+@authToken = Bearer {{generateToken.response.body.access_token}}
+
+###
+# Generate Token With Grant Type: client_credentials
+POST /oauth/token?grant_type=client_credentials HTTP/1.1
+Host: localhost:8080
+Authorization: Basic Y2wtYXBwOjEyMzQ1Njc4OQ==
+
+###
+# Get Data Current User
+GET /api/user HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Accept: application/json
+Authorization: {{authToken}}
