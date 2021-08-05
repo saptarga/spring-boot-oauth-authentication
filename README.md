@@ -62,5 +62,23 @@ Authorization: {{authToken}}
 ## Client Http
 The example above can you try in `Demo OAuth Client.http`
 
+## Deploy Spring Boot To Heroku
+
+Step deploy to Heroku:
+
+- Login to Heroku and create new app in Heroku
+- Configure PostgreSQL database in Heroku
+    - If your application using postgresql, you must add `Heroku Postgres` in `Resources -> Add-ons`
+    - Get PostgreSQL credentials in `Settings -> View Credentials`
+- Replace PostgreSQL credentials in application.properties file
+- Host or Connect spring boot project on GitHub, in tab `Deploy`
+- After connect to github, you can deploy spring boot project in Heroku cloud from GitHub repository, for deploy you can check to `Manual deploy` then klik button `Deploy Branch`.
+
+
+  ![This is a alt text.](https://i.ibb.co/SBVMrhq/Deploy-Heroku.png "This is a sample image.")
+
+- Test CRUD Rest API's using Postman client
+
+
 ## Author
 Created and maintained by saptarga ([@saptarga](https://www.linkedin.com/in/saptarga)).
